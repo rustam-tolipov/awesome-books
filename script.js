@@ -34,8 +34,26 @@ const addBooks = (e) => {
 const removeBook = (ButtonEvent) => {
   const buttonId = ButtonEvent.target.id;
   books = books.filter((y) => y !== books[books.findIndex((x) => x.id === parseInt(buttonId, 10))]);
-  localStorage.setItem('bookObject', JSON.stringify(books));
+  localStorage.setItem('BooksList', JSON.stringify(books));
   bookList.innerHTML = `${books.map(listBooks).join('')}`;
 };
 
+const checkLocalStorage = () => {
+  const dataGet = localStorage.getItem('BooksList');
+  const data = JSON.parse(dataGet);
+  if (data) {
+    books = data;
+    if(books.length > 0){
+      i = books[books.length - 1].id;
+    }
+  }
+  bookList.innerHTML = `${books.map(listBooks).join('')}`;
+  bookList.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remove-btn')) {
+      removeBook(e);
+    }
+  });
+};
+
+window.addEventListener('DOMContentLoaded', checkLocalStorage);
 submit.addEventListener('submit', addBooks);
