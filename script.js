@@ -12,8 +12,8 @@ function listBooks(books) {
     <button type='button' id='${books.id}' class='remove-btn'>Remove</button>`;
 }
 
-const removeBook = (ButtonEvent) => {
-  const buttonId = ButtonEvent.target.id;
+const removeBook = (e) => {
+  const buttonId = e.target.id;
   books = books.filter((y) => y !== books[books.findIndex((x) => x.id === parseInt(buttonId, 10))]);
   localStorage.setItem('BooksList', JSON.stringify(books));
   bookList.innerHTML = `${books.map(listBooks).join('')}`;
