@@ -11,10 +11,6 @@ Additional description about the project and its features.
 - CSS
 - JavaScript
 
-## Live Demo
-
-[Live Demo Link](?)
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
@@ -29,13 +25,13 @@ To get a local copy up and running follow these simple example steps.
 
 ### Install
 
-To clone this repo go to "?"
+To clone this repo: You need to have git installed in your system. 
 
-git clone your repo
+git clone the repo in your terminal by: "git clone https://github.com/Rustamxon7/Awesome-books.git"
 
 cd into the folder
 
-open index.html with live server
+open index.html 
 
 ## Authors
 
@@ -43,6 +39,11 @@ open index.html with live server
 
 - GitHub: [@githubhandle](https://github.com/Rustamxon7)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/rustamjon-tolipov-6a831020b)
+
+👤 **Alick Nyirenda**
+- GitHub: [@Beardless-sheik](https://github.com/Beardless-sheik)
+- Twitter: [@beardless_sheik](https://twitter.com/beardless_sheik)
+- LinkedIn: [Alick Nyirenda](https://www.linkedin.com/in/alick-nyirenda/)
 
 ## 🤝 Contributing
 
