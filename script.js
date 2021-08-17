@@ -5,12 +5,10 @@ const form = document.querySelector('.addBooks');
 const bookList = document.getElementById('booksList');
 const submit = document.getElementById('addBooks');
 
-function listBooks(books) {
-  return `
+const listBooks = (books) => `
     <li>${books.title}</li>
     <li>${books.author}</li>
     <button type='button' id='${books.id}' class='remove-btn'>Remove</button>`;
-}
 
 const removeBook = (e) => {
   const buttonId = e.target.id;
