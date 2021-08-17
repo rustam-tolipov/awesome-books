@@ -10,11 +10,25 @@ const listBooks = (books) => `
     <li>${books.author}</li>
     <button type='button' id='${books.id}' class='remove-btn'>Remove</button>`;
 
-const removeBook = (e) => {
-  const buttonId = e.target.id;
-  books = books.filter((y) => y !== books[books.findIndex((x) => x.id === parseInt(buttonId, 10))]);
+const setItemFunc = () => {
   localStorage.setItem('BooksList', JSON.stringify(books));
   bookList.innerHTML = `${books.map(listBooks).join('')}`;
+};
+
+const removeBook = (e) => {
+  const btn = e.target.id;
+  books = books.filter((y) => y !== books[books.findIndex((x) => x.id === parseInt(btn, 10))]);
+  // localStorage.setItem('BooksList', JSON.stringify(books));
+  // bookList.innerHTML = `${books.map(listBooks).join('')}`;
+  setItemFunc();
+};
+
+const removeBtn = () => {
+  bookList.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remove-btn')) {
+      removeBook(e);
+    }
+  });
 };
 
 const addBooks = (e) => {
@@ -26,32 +40,22 @@ const addBooks = (e) => {
     author: document.getElementById('author').value,
   };
   books.push(localBook);
-  localStorage.setItem('BooksList', JSON.stringify(books));
-  bookList.innerHTML = `${books.map(listBooks).join('')}`;
-  bookList.addEventListener('click', (e) => {
-    if (e.target.classList.contains('remove-btn')) {
-      removeBook(e);
-    }
-  });
+  // localStorage.setItem('BooksList', JSON.stringify(books));
+  // bookList.innerHTML = `${books.map(listBooks).join('')}`;
+  setItemFunc();
+  removeBtn();
   form.reset();
 };
 
-const checkLocalStorage = () => {
-  const dataGet = localStorage.getItem('BooksList');
-  const data = JSON.parse(dataGet);
+const getBooks = () => {
+  const getData = localStorage.getItem('BooksList');
+  const data = JSON.parse(getData);
   if (data) {
     books = data;
-    if (books.length > 0) {
-      i = books[books.length - 1].id;
-    }
   }
   bookList.innerHTML = `${books.map(listBooks).join('')}`;
-  bookList.addEventListener('click', (e) => {
-    if (e.target.classList.contains('remove-btn')) {
-      removeBook(e);
-    }
-  });
+  removeBtn();
 };
 
-window.addEventListener('DOMContentLoaded', checkLocalStorage);
+window.addEventListener('DOMContentLoaded', getBooks);
 submit.addEventListener('submit', addBooks);
