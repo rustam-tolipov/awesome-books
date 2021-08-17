@@ -8,33 +8,6 @@ html {
   font-family: 'Hi Melody', cursive;
 }
 
- body {
+body {
   font-size: 40px;
 }
-
-/*
-.main {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(244, 244, 245);
-  height: 100vh;
-  font-size: 3rem;
-  padding-left: 1rem;
-}
-
-.main-title {
-  text-align: center;
-}
-
-.booksList {
-  width: 10rem;
-  border: black solid 0.1rem;
-}
-
-.addBooks {
-  margin-top: 5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  width: 10rem;
-} */
