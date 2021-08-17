@@ -12,6 +12,13 @@ function listBooks(books) {
     <button type='button' id='${books.id}' class='remove-btn'>Remove</button>`;
 }
 
+const removeBook = (ButtonEvent) => {
+  const buttonId = ButtonEvent.target.id;
+  books = books.filter((y) => y !== books[books.findIndex((x) => x.id === parseInt(buttonId, 10))]);
+  localStorage.setItem('BooksList', JSON.stringify(books));
+  bookList.innerHTML = `${books.map(listBooks).join('')}`;
+};
+
 const addBooks = (e) => {
   e.preventDefault();
   i += 1;
@@ -31,19 +38,12 @@ const addBooks = (e) => {
   form.reset();
 };
 
-const removeBook = (ButtonEvent) => {
-  const buttonId = ButtonEvent.target.id;
-  books = books.filter((y) => y !== books[books.findIndex((x) => x.id === parseInt(buttonId, 10))]);
-  localStorage.setItem('BooksList', JSON.stringify(books));
-  bookList.innerHTML = `${books.map(listBooks).join('')}`;
-};
-
 const checkLocalStorage = () => {
   const dataGet = localStorage.getItem('BooksList');
   const data = JSON.parse(dataGet);
   if (data) {
     books = data;
-    if(books.length > 0){
+    if (books.length > 0) {
       i = books[books.length - 1].id;
     }
   }
