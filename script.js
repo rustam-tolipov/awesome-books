@@ -31,4 +31,11 @@ const addBooks = (e) => {
   form.reset();
 };
 
+const removeBook = (ButtonEvent) => {
+  const buttonId = ButtonEvent.target.id;
+  books = books.filter((y) => y !== books[books.findIndex((x) => x.id === parseInt(buttonId, 10))]);
+  localStorage.setItem('bookObject', JSON.stringify(books));
+  bookList.innerHTML = `${books.map(listBooks).join('')}`;
+};
+
 submit.addEventListener('submit', addBooks);
