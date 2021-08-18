@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 /* eslint-disable max-len */
 
@@ -75,35 +76,30 @@ class BookCollection {
 const bookCol = new BookCollection();
 bookCol.listBooks(bookCol.collection);
 
-const openList = document.querySelector('.first-page');
-const listPage = document.getElementById('list');
-const openAddNew = document.querySelector('.add-book');
-const addNewPage = document.getElementById('addNew');
-const openContact = document.querySelector('.contact');
-const contactPage = document.getElementById('contact');
-const currentTime = document.getElementById('currentTime');
-
 function Time() {
   const luxonTime = luxon.DateTime.now();
   currentTime.innerHTML = luxonTime.toLocaleString(luxon.DateTime.DATETIME_MED);
 }
 const myTime = setInterval(Time, 1000);
 
-function openMainPage() {
-  openList.classList.remove('hidden');
-  openList.classList.add('flex');
-}
+const firstPage = document.querySelector('#first-page');
+const addNewPage = document.querySelector('#addNewBooks');
+const contactPage = document.querySelector('.contact');
 
-function openAddNewBookPage() {
-  openAddNew.classList.add('flex');
-  openAddNew.classList.remove('hidden');
-}
+document.querySelector('#list').addEventListener('click', () => {
+  firstPage.classList.remove('hidden');
+  addNewPage.classList.add('hidden');
+  contactPage.classList.add('hidden');
+});
 
-function openContactPage() {
-  openContact.classList.add('flex');
-  openContact.classList.remove('hidden');
-}
+document.querySelector('#addNew').addEventListener('click', () => {
+  addNewPage.classList.remove('hidden');
+  firstPage.classList.add('hidden');
+  contactPage.classList.add('hidden');
+});
 
-listPage.addEventListener('click', openMainPage);
-addNewPage.addEventListener('click', openAddNewBookPage);
-contactPage.addEventListener('click', openContactPage);
+document.querySelector('#contact').addEventListener('click', () => {
+  contactPage.classList.remove('hidden');
+  firstPage.classList.add('hidden');
+  addNewPage.classList.add('hidden');
+});

@@ -11,9 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <section class="home">
+    <div class="home">
       <nav class="navbar">
-        <h1 class="navbar-title">Awesome Books</h1>
+        <p class="navbar-title">Awesome Books</p>
         <ul class="navbar-list">
           <li><a class="link" href="#" id="list">List</a></li>
           <li class="column"></li>
@@ -23,23 +23,23 @@
         </ul>
       </nav>
       <div class="data" id="currentTime"></div>
-      <section class="first-page hidden">
+      <div class="first-page hidden" id="first-page">
         <div class="main">
-          <h1 class="main-title">All awesome books</h1>
+          <p class="main-title">All awesome books</p>
           <ul class="list-books" id="booksList"></ul>
         </div>
-      </section>
+      </div>
 
-      <section class="add-book hidden" id="addBooks">
-        <h1 class="main-title">Add a new book</h1>
+      <div class="add-book hidden" id="addNewBooks">
+        <p class="main-title">Add a new book</p>
         <form class="add-book-form addBooks" id="addBooks">
           <input class="input title" type="text" placeholder="Title" required id="title" />
           <input class="input author" type="text" placeholder="Author" required id="author" />
-          <input class="input input-btn btn" id="submit" type="submit" value="Add" class="add-btn" />
+          <input class="input input-btn btn add-btn" id="submit" type="submit" value="Add" />
         </form>
-      </section>
+      </div>
 
-      <section class="contact hidden">
+      <div class="contact hidden">
         <h1 class="contact-title">Contact information</h1>
         <p class="contact-info">
           Do you have any questions or you just want to say "Hello"? <br />
@@ -50,9 +50,9 @@
           <li>Our phone number: +998975570327</li>
           <li>Our address: Birdamlik 26, Uchko'prik city, Uzbekistan</li>
         </ul>
-      </section>
+      </div>
       <footer class="copyright">Copyright ... Rustamxon</footer>
-    </section>
+    </div>
 
     <script src="script.js"></script>
     <script src="luxon.js"></script>

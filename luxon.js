@@ -1,4 +1,4 @@
-var luxon = (function (e) {
+let luxon = (function (e) {
   'use strict';
   function r(e, t) {
     for (var n = 0; n < t.length; n++) {
