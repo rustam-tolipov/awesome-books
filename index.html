@@ -11,21 +11,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <div class="main">
-      <h1 class="main-title">Awesome books</h1>
+    <section class="main">
+      <h1 class="main-title">All awesome books</h1>
+      <ul class="list-books" id="booksList">
+      </ul>
+    </section>
 
-      <div class="listBooks">
-        <ul id="booksList"></ul>
-        <div class="line"></div>
-      </div>
-      <div>
-        <form class="addBooks" id="addBooks">
-          <input type="text" placeholder="Title" required id="title" />
-          <input type="text" placeholder="Author" required id="author" />
-          <input id="submit" type="submit" value="Add" class="add-btn" />
-        </form>
-      </div>
-    </div>
+    <section class="add-book" id="addBooks">
+      <h1 class="main-title">Add a new book</h1>
+      <form class="add-book-form addBooks" id="addBooks">
+        <input class="input title" type="text" placeholder="Title" required id="title" />
+        <input class="input author" type="text" placeholder="Author" required id="author" />
+        <input class="input input-btn btn" id="submit" type="submit" value="Add" class="add-btn" />
+      </form>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>
