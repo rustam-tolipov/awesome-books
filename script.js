@@ -82,9 +82,9 @@ function Time() {
 }
 const myTime = setInterval(Time, 1000);
 
-const firstPage = document.querySelector('#first-page');
-const addNewPage = document.querySelector('#addNewBooks');
-const contactPage = document.querySelector('.contact');
+const firstPage = document.querySelector('.section1');
+const addNewPage = document.querySelector('.section2');
+const contactPage = document.querySelector('.section3');
 
 document.querySelector('#list').addEventListener('click', () => {
   firstPage.classList.remove('hidden');
