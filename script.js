@@ -16,9 +16,7 @@ class BookCollection {
   }
 
   listBooks = (books) => `
-    <li>${books.title}</li>
-    <li>${books.author}</li>
-    <button type='button' id='${books.id}' class='remove-btn'>Remove</button>`;
+    <li class="book"><p class="book-title">"${books.title}" by ${books.author}</p> <button id='${books.id}' class="remove-btn btn">Remove</button>`;
 
   setItemFunc = () => {
     localStorage.setItem('BooksList', JSON.stringify(this.collection));
