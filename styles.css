@@ -12,6 +12,12 @@ body {
   font-size: 62.5%;
 }
 
+.first-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -53,6 +59,16 @@ body {
   border-radius: 40% 26% 17% 47% / 1% 3% 1% 3%;
   border: black solid 0.2rem;
   box-shadow: 3px 3px 0.5px 0.5px #000;
+}
+
+.line {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  width: 10rem;
+  border: #000 solid 0.1rem;
+  background-color: #000;
+  border-radius: 40% 59% 46% 47% / 38% 33% 5% 30%;
 }
 
 .add-book {
