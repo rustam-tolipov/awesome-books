@@ -2,6 +2,7 @@
 
 # Awesome books
 
+![AwesomeBook](https://user-images.githubusercontent.com/69011963/130073381-1e3c14c7-d6ec-4da1-b0b2-3e50af2447d2.gif)
 
 Additional description about the project and its features.
 
@@ -22,6 +23,10 @@ To get a local copy up and running follow these simple example steps.
 - JavaScript
 - Git
 - GitHub
+
+## Live Demo
+
+[Live Demo Link](?)
 
 ### Install
 
