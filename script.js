@@ -12,6 +12,9 @@ class BookCollection {
     this.firstPage = document.querySelector('.section1');
     this.addNewPage = document.querySelector('.section2');
     this.contactPage = document.querySelector('.section3');
+    this.list = document.getElementById('list');
+    this.addNew = document.getElementById('addNew');
+    this.contact = document.getElementById('contact');
     this.collection = [];
     window.addEventListener('DOMContentLoaded', this.init);
     this.form.addEventListener('submit', (ev) => {
@@ -43,25 +46,35 @@ class BookCollection {
   };
 
   addNavEventListeners = () => {
-    document.querySelector('#list').addEventListener('click', () => {
+    list.addEventListener('click', () => {
       this.firstPage.classList.remove('hidden');
       this.addNewPage.classList.add('hidden');
       this.contactPage.classList.add('hidden');
       this.welcome.classList.add('hidden');
+      this.welcome.classList.add('hidden');
+      this.list.style.color = 'blue';
+      this.addNew.style.color = 'black';
+      this.contact.style.color = 'black';
     });
 
-    document.querySelector('#addNew').addEventListener('click', () => {
+    this.addNew.addEventListener('click', () => {
       this.addNewPage.classList.remove('hidden');
       this.firstPage.classList.add('hidden');
       this.contactPage.classList.add('hidden');
       this.welcome.classList.add('hidden');
+      this.addNew.style.color = 'blue';
+      this.list.style.color = 'black';
+      this.contact.style.color = 'black';
     });
 
-    document.querySelector('#contact').addEventListener('click', () => {
+    this.contact.addEventListener('click', () => {
       this.contactPage.classList.remove('hidden');
       this.firstPage.classList.add('hidden');
       this.addNewPage.classList.add('hidden');
       this.welcome.classList.add('hidden');
+      this.contact.style.color = 'blue';
+      this.list.style.color = 'black';
+      this.addNew.style.color = 'black';
     });
   };
 
