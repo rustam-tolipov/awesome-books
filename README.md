@@ -54,7 +54,7 @@ open index.html
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](?).
+Feel free to check the [issues page](https://github.com/Rustamxon7/Awesome-books/issues).
 
 ## Show your support
 
