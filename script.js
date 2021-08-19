@@ -8,6 +8,9 @@ class BookCollection {
     this.form = document.querySelector('.addBooks');
     this.bookList = document.getElementById('booksList');
     this.submit = document.getElementById('addBooks');
+    this.firstPage = document.querySelector('.section1');
+    this.addNewPage = document.querySelector('.section2');
+    this.contactPage = document.querySelector('.section3');
     this.collection = [];
     window.addEventListener('DOMContentLoaded', this.init);
     this.form.addEventListener('submit', (ev) => {
@@ -38,6 +41,26 @@ class BookCollection {
     });
   };
 
+  addNavEventListeners = () => {
+    document.querySelector('#list').addEventListener('click', () => {
+      this.firstPage.classList.remove('hidden');
+      this.addNewPage.classList.add('hidden');
+      this.contactPage.classList.add('hidden');
+    });
+
+    document.querySelector('#addNew').addEventListener('click', () => {
+      this.addNewPage.classList.remove('hidden');
+      this.firstPage.classList.add('hidden');
+      this.contactPage.classList.add('hidden');
+    });
+
+    document.querySelector('#contact').addEventListener('click', () => {
+      this.contactPage.classList.remove('hidden');
+      this.firstPage.classList.add('hidden');
+      this.addNewPage.classList.add('hidden');
+    });
+  }
+
   addBooks = (e) => {
     e.preventDefault();
     this.i += 1;
@@ -62,6 +85,11 @@ class BookCollection {
     this.removeButtonEventListener();
   };
 
+  // Time() {
+  //   const luxonTime = luxon.DateTime.now();
+  //   currentTime.innerHTML = luxonTime.toLocaleString(luxon.DateTime.DATETIME_MED);
+  // }
+
   init = () => {
     const dataGet = localStorage.getItem('BooksList');
     const data = JSON.parse(dataGet);
@@ -70,36 +98,16 @@ class BookCollection {
     }
     this.setItemFunc();
     this.removeButtonEventListener();
+    this.addNavEventListeners();
   };
 }
 
 const bookCol = new BookCollection();
 bookCol.listBooks(bookCol.collection);
 
-function Time() {
+const Time = () => {
   const luxonTime = luxon.DateTime.now();
   currentTime.innerHTML = luxonTime.toLocaleString(luxon.DateTime.DATETIME_MED);
-}
+};
+
 const myTime = setInterval(Time, 1000);
-
-const firstPage = document.querySelector('.section1');
-const addNewPage = document.querySelector('.section2');
-const contactPage = document.querySelector('.section3');
-
-document.querySelector('#list').addEventListener('click', () => {
-  firstPage.classList.remove('hidden');
-  addNewPage.classList.add('hidden');
-  contactPage.classList.add('hidden');
-});
-
-document.querySelector('#addNew').addEventListener('click', () => {
-  addNewPage.classList.remove('hidden');
-  firstPage.classList.add('hidden');
-  contactPage.classList.add('hidden');
-});
-
-document.querySelector('#contact').addEventListener('click', () => {
-  contactPage.classList.remove('hidden');
-  firstPage.classList.add('hidden');
-  addNewPage.classList.add('hidden');
-});
