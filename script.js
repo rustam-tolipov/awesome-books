@@ -8,6 +8,7 @@ class BookCollection {
     this.form = document.querySelector('.addBooks');
     this.bookList = document.getElementById('booksList');
     this.submit = document.getElementById('addBooks');
+    this.welcome = document.getElementById('hideWelcome');
     this.firstPage = document.querySelector('.section1');
     this.addNewPage = document.querySelector('.section2');
     this.contactPage = document.querySelector('.section3');
@@ -46,20 +47,23 @@ class BookCollection {
       this.firstPage.classList.remove('hidden');
       this.addNewPage.classList.add('hidden');
       this.contactPage.classList.add('hidden');
+      this.welcome.classList.add('hidden');
     });
 
     document.querySelector('#addNew').addEventListener('click', () => {
       this.addNewPage.classList.remove('hidden');
       this.firstPage.classList.add('hidden');
       this.contactPage.classList.add('hidden');
+      this.welcome.classList.add('hidden');
     });
 
     document.querySelector('#contact').addEventListener('click', () => {
       this.contactPage.classList.remove('hidden');
       this.firstPage.classList.add('hidden');
       this.addNewPage.classList.add('hidden');
+      this.welcome.classList.add('hidden');
     });
-  }
+  };
 
   addBooks = (e) => {
     e.preventDefault();
@@ -84,11 +88,6 @@ class BookCollection {
     bookList.innerHTML = `${books.map(listBooks).join('')}`;
     this.removeButtonEventListener();
   };
-
-  // Time() {
-  //   const luxonTime = luxon.DateTime.now();
-  //   currentTime.innerHTML = luxonTime.toLocaleString(luxon.DateTime.DATETIME_MED);
-  // }
 
   init = () => {
     const dataGet = localStorage.getItem('BooksList');
